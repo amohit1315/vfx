@@ -1,137 +1,900 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  {% load static %}
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <style>
-  #x {
-      position: relative;
-  }
-  #section1 {padding-top:50px;height:500px;color: #fff; background-color: #2F3238;}
-  #section2 {padding-top:50px;height:500px;color: #fff; background-color: #26292E;}
-  #section3 {padding-top:50px;height:500px;color: #fff; background-color: #2F3238;}
-  #section4 {padding-top:50px;height:500px;color: #fff; background-color: #26292E;}
+  <head>
+    {% load static %}
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'fancybox-master/dist/jquery.fancybox.css' %}"
+      type="text/css"
+      media="screen"
+    />
+    <script
+      type="text/javascript"
+      src="{% static 'fancybox-master/dist/jquery.fancybox.min.js' %}"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css"
+    />
+    <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
 
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
+    <style>
+      @media only screen and (max-width: 700px) {
+        .sec4responsive {
+          width: 49.99999%;
+          margin: 6px 0;
+        }
+      }
 
-  .sticky + .content {
-    padding-top: 60px;
-  }
+      @media only screen and (max-width: 500px) {
+        .sec4responsive {
+          width: 100%;
+        }
+      }
 
-  .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
-    background-color: transparent;
-    color: white;
-  }
-  </style>
-</head>
-<body class="x" data-spy="scroll" data-target=".navbar" data-offset="300">
+      #x {
+        position: relative;
+      }
 
-<div class="container" style="width: 100%; padding: 0px">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+      .sec4responsive {
+        margin: 20px 20px 20px 20px;
+        display: block;
+        max-width: 400px;
+        max-height: 330px;
+        float: left;
+      }
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        {% load static %}
-        <img src="{% static '1.jpg' %}" alt="Los Angeles" style="width:100%;">
-      </div>
+      .sec4responsive img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+      }
 
-      <div class="item">
-        <img src="{% static '2.jpg' %}" alt="Chicago" style="width:100%;">
-      </div>
+      .section4p {
+        text-align: left;
+        margin-bottom: 20px;
+        display: block;
+      }
 
-      <div class="item">
-        <img src="{% static '3.jpg' %}" alt="New york" style="width:100%;">
+      .section4div {
+        margin: 30px 5% 5% 15%;
+        color: #ccc;
+      }
+
+      .banner {
+        position: relative;
+        margin-bottom: 44px;
+        display: block;
+      }
+
+      .fancybox-stage {
+        width: 50%;
+        height: 50%;
+        margin: auto;
+      }
+
+      #section1 {
+        padding-top: 50px;
+        height: auto;
+        color: #fff;
+        background-color: #2f3238;
+        text-align: center;
+        padding-bottom: 60px;
+      }
+      #section2 {
+        padding-top: 50px;
+        height: auto;
+        color: #fff;
+        background-color: #26292e;
+        padding-bottom: 60px;
+        text-align: center;
+      }
+      #section3 {
+        padding-top: 50px;
+        height: auto;
+        color: #fff;
+        background-color: #2f3238;
+        text-align: center;
+        padding-bottom: 60px;
+      }
+      #section4 {
+        padding-top: 50px;
+        height: auto;
+        color: #fff;
+        background-color: #26292e;
+        text-align: center;
+        padding-bottom: 60px;
+      }
+      #section5 {
+        padding-top: 50px;
+        height: auto;
+        color: #fff;
+        background-color: #2f3238;
+        text-align: center;
+        padding-bottom: 60px;
+      }
+      #section6 {
+        padding-top: 50px;
+        height: auto;
+        color: #fff;
+        background-color: #26292e;
+        text-align: center;
+        padding-bottom: 60px;
+      }
+
+      .juxtapose {
+        max-width: 400px;
+        margin: 0;
+      }
+      .jx-slider {
+        margin-top: 1em;
+      }
+
+      .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+
+      .sticky + .content {
+        padding-top: 60px;
+      }
+
+      .navbar-inverse .navbar-nav > .active > a,
+      .navbar-inverse .navbar-nav > .active > a:focus,
+      .navbar-inverse .navbar-nav > .active > a:hover {
+        background-color: transparent;
+        color: white;
+      }
+
+      .card-section2 {
+        max-width: 400px;
+        max-height: 300px;
+        float: left;
+        margin: 20px;
+        box-sizing: border-box;
+      }
+
+      .section-h {
+        font-size: 40px;
+        margin: 0px 0px 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .section-a {
+        color: #ccc;
+        text-decoration: underline;
+        cursor: pointer;
+        transition-property: color;
+        transition-duration: 0.1s;
+        transition-timing-function: linear;
+        transition-delay: 0s;
+      }
+
+      .section-p {
+        color: #ccc;
+        margin-bottom: 20px;
+      }
+
+      .container1-img {
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 0px;
+      }
+
+      .thumbnail-img {
+        width: 169px;
+        margin-left: 20px;
+        margin-bottom: 34px;
+        margin-right: 0px;
+        float: left;
+      }
+
+      .card {
+        margin-bottom: 20px;
+      }
+
+      .container_vid {
+        position: relative;
+        font-family: Arial;
+        box-sizing: border-box;
+      }
+
+      .container_vid1 {
+        position: relative;
+        font-family: Arial;
+        box-sizing: border-box;
+      }
+
+      .text-block {
+        position: absolute;
+        bottom: 20px;
+        left: 0px;
+        background-color: transparent;
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .glyphicon {
+        position: absolute;
+        top: 35%;
+        left: 45%;
+        font-size: 40px;
+        visibility: hidden;
+        opacity: 0.2;
+        transition: 0.5s;
+      }
+
+      .container_vid:hover .glyphicon {
+        visibility: visible;
+        opacity: 0.8;
+        transform: rotate3d(360deg);
+        -webkit-transform: rotate3d(0, 1, 0, 360deg);
+      }
+    </style>
+  </head>
+  <body class="x" data-spy="scroll" data-target=".navbar" data-offset="300">
+    <div class="container" style="width: 100%; padding: 0px">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            {% load static %}
+            <img
+              src="{% static '1.jpg' %}"
+              alt="Los Angeles"
+              style="width:100%;"
+            />
+          </div>
+
+          <div class="item">
+            <img src="{% static '2.jpg' %}" alt="Chicago" style="width:100%;" />
+          </div>
+
+          <div class="item">
+            <img
+              src="{% static '3.jpg' %}"
+              alt="New york"
+              style="width:100%;"
+            />
+          </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
     </div>
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
+    <nav
+      class="navbar navbar-inverse"
+      style="margin:0px; border-radius:0; height:70px"
+      id="navbar"
+    >
+      <div class="container-fluid" style="height:100%">
+        <div class="navbar-header" style="height:100%">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" style="margin-top:10px"
+            >WebSiteName</a
+          >
+        </div>
+        <div style="height:100%">
+          <div
+            class="collapse navbar-collapse"
+            id="myNavbar"
+            style="height:100%"
+          >
+            <ul class="nav navbar-nav navbar-right" style="margin-top:10px">
+              <li><a href="#section1">FEATURES</a></li>
+              <li><a href="#section2">COMMERCIALS</a></li>
+              <li><a href="#section3">BEFORE + AFTER</a></li>
+              <li><a href="#section4">ABOUT</a></li>
+              <li><a href="#section5">CAREERS</a></li>
+              <li><a href="#section6">CONTACT</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-<nav class="navbar navbar-inverse" style="margin:0px; border-radius:0; height:70px" id="navbar">
-  <div class="container-fluid" style="height:100%; overflow:hidden">
-    <div class="navbar-header" style="height:100%; overflow:hidden">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#" style="margin-top:10px">WebSiteName</a>
-    </div>
-    <div style="height:100%">
-      <div class="collapse navbar-collapse" id="myNavbar" style="height:100%">
-        <ul class="nav navbar-nav navbar-right" style="margin-top:10px">
-          <li><a href="#section1">FEATURES</a></li>
-          <li><a href="#section2">COMMERCIALS</a></li>
-          <li><a href="#section3">BEFORE + AFTER</a></li>
-          <li><a href="#section4">ABOUT</a></li>
-        </ul>
+    <div id="section1" class="container-fluid">
+      <h2 class="section-h">FEATURES</h2>
+      <div>
+        <p class="section-p">
+          ZERO's team of seasoned supervisors, producers and artists live to
+          create ground-breaking illusions that serve both the story and the
+          need for highly technical, photo-real results. We are<br />a full
+          service studio and many times oversee all aspects of production, from
+          page to post and everything in between.
+        </p>
+        <p style="margin-bottom: 40px;">
+          <a href="#section6" class="section-a"
+            >Contact Brian Drewes for feature inquiries</a
+          >
+        </p>
+      </div>
+      <div class="container container1-img">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="card-deck">
+              <div class="card">
+                <div class="container_vid">
+                  <img
+                    src="{% static '2.jpg' %}"
+                    alt="Nature"
+                    style="width:100%;"
+                    data-fancybox
+                    href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
+                  />
+                  <span class="glyphicon glyphicon-play-circle"></span>
+                  <div class="text-block">
+                    <h4>Nature</h4>
+                    <p>What a beautiful sunrise</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="container_vid">
+                  <img
+                    src="{% static '3.jpg' %}"
+                    alt="Nature"
+                    style="width:100%;"
+                    data-fancybox
+                    href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
+                  />
+                  <span class="glyphicon glyphicon-play-circle"></span>
+                  <div class="text-block">
+                    <h4>Nature</h4>
+                    <p>What a beautiful sunrise</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="container_vid">
+                  <img
+                    src="{% static '1.jpg' %}"
+                    alt="Nature"
+                    style="width:100%;"
+                    data-fancybox
+                    href="https://vimeo.com/307290359/5d1b43fc36"
+                  />
+                  <span class="glyphicon glyphicon-play-circle"></span>
+                  <div class="text-block">
+                    <h4>Nature</h4>
+                    <p>What a beautiful sunrise</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="container_vid">
+                  <img
+                    src="{% static '2.jpg' %}"
+                    alt="Nature"
+                    style="width:100%;"
+                    data-fancybox
+                    href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
+                  />
+                  <span class="glyphicon glyphicon-play-circle"></span>
+                  <div class="text-block">
+                    <h4>Nature</h4>
+                    <p>What a beautiful sunrise</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="container_vid">
+                  <img
+                    src="{% static '3.jpg' %}"
+                    alt="Nature"
+                    style="width:100%;"
+                    data-fancybox
+                    href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
+                  />
+                  <span class="glyphicon glyphicon-play-circle"></span>
+                  <div class="text-block">
+                    <h4>Nature</h4>
+                    <p>What a beautiful sunrise</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="container_vid">
+                  <img
+                    src="{% static '1.jpg' %}"
+                    alt="Nature"
+                    style="width:100%;"
+                    data-fancybox
+                    href="https://vimeo.com/307290359/5d1b43fc36"
+                  />
+                  <span class="glyphicon glyphicon-play-circle"></span>
+                  <div class="text-block">
+                    <h4>Nature</h4>
+                    <p>What a beautiful sunrise</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-1"></div>
+          <div class="col-sm-7">
+            <div
+              class="thumbnail-img"
+              data-fancybox
+              href="{% static '4.jpg' %}"
+            >
+              <img
+                src="{% static '4.jpg' %}"
+                alt="Los Angeles"
+                style="width:100%;"
+              />
+            </div>
+            <div class="thumbnail-img">
+              <img
+                src="{% static '5.jpg' %}"
+                alt="Los Angeles"
+                style="width:100%;"
+              />
+            </div>
+            <div class="thumbnail-img">
+              <img
+                src="{% static '6.jpg' %}"
+                alt="Los Angeles"
+                style="width:100%;"
+              />
+            </div>
+            <div class="thumbnail-img">
+              <img
+                src="{% static '7.jpg' %}"
+                alt="Los Angeles"
+                style="width:100%;"
+              />
+            </div>
+            <div class="thumbnail-img">
+              <img
+                src="{% static '8.jpg' %}"
+                alt="Los Angeles"
+                style="width:100%;"
+              />
+            </div>
+            <div class="thumbnail-img">
+              <img
+                src="{% static '9.jpeg' %}"
+                alt="Los Angeles"
+                style="width:100%;"
+              />
+            </div>
+            <div class="thumbnail-img">
+              <img
+                src="{% static '10.jpg' %}"
+                alt="Los Angeles"
+                style="width:100%;"
+              />
+            </div>
+            <div class="thumbnail-img">
+              <img
+                src="{% static '11.jpeg' %}"
+                alt="Los Angeles"
+                style="width:100%;"
+              />
+            </div>
+            <div class="thumbnail-img">
+              <img
+                src="{% static '12.jpeg' %}"
+                alt="Los Angeles"
+                style="width:100%;"
+              />
+            </div>
+            <div class="thumbnail-img">
+              <img
+                src="{% static '13.jpeg' %}"
+                alt="Los Angeles"
+                style="width:100%;"
+              />
+            </div>
+            <div class="thumbnail-img">
+              <img
+                src="{% static '14.jpg' %}"
+                alt="Los Angeles"
+                style="width:100%;"
+              />
+            </div>
+            <div class="thumbnail-img">
+              <img
+                src="{% static '15.jpg' %}"
+                alt="Los Angeles"
+                style="width:100%;"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+    <div id="section2" class="container-fluid">
+      <h2 class="section-h">COMMERCIALS + CONTENT</h2>
+      <p class="section-p">
+        Memorable messaging is created through memorable imagery. At ZERO, our
+        sophisticated bi-coastal teams merge the highly creative and the highly
+        technical, delivering on our passion<br />for storytelling.
+      </p>
+      <p>
+        <a href="#section6" class="section-a"
+          >Contact Meg Bailey for commercial inquiries</a
+        >
+      </p>
+      <div
+        class="card-deck"
+        style="margin-left: 10%; margin-top: 40px; margin-bottom: 20px;"
+      >
+        <div class="card card-section2">
+          <div class="container_vid">
+            <img
+              src="{% static '2.jpg' %}"
+              alt="Nature"
+              style="width:100%;"
+              data-fancybox
+              href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
+            />
+            <span class="glyphicon glyphicon-play-circle"></span>
+            <div class="text-block">
+              <h4>Nature</h4>
+              <p>What a beautiful sunrise</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-section2">
+          <div class="container_vid">
+            <img
+              src="{% static '3.jpg' %}"
+              alt="Nature"
+              style="width:100%;"
+              data-fancybox
+              href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
+            />
+            <span class="glyphicon glyphicon-play-circle"></span>
+            <div class="text-block">
+              <h4>Nature</h4>
+              <p>What a beautiful sunrise</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-section2">
+          <div class="container_vid">
+            <img
+              src="{% static '1.jpg' %}"
+              alt="Nature"
+              style="width:100%;"
+              data-fancybox
+              href="https://vimeo.com/307290359/5d1b43fc36"
+            />
+            <span class="glyphicon glyphicon-play-circle"></span>
+            <div class="text-block">
+              <h4>Nature</h4>
+              <p>What a beautiful sunrise</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-section2">
+          <div class="container_vid">
+            <img
+              src="{% static '2.jpg' %}"
+              alt="Nature"
+              style="width:100%;"
+              data-fancybox
+              href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
+            />
+            <span class="glyphicon glyphicon-play-circle"></span>
+            <div class="text-block">
+              <h4>Nature</h4>
+              <p>What a beautiful sunrise</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-section2">
+          <div class="container_vid">
+            <img
+              src="{% static '3.jpg' %}"
+              alt="Nature"
+              style="width:100%;"
+              data-fancybox
+              href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
+            />
+            <span class="glyphicon glyphicon-play-circle"></span>
+            <div class="text-block">
+              <h4>Nature</h4>
+              <p>What a beautiful sunrise</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-section2">
+          <div class="container_vid">
+            <img
+              src="{% static '1.jpg' %}"
+              alt="Nature"
+              style="width:100%;"
+              data-fancybox
+              href="https://vimeo.com/307290359/5d1b43fc36"
+            />
+            <span class="glyphicon glyphicon-play-circle"></span>
+            <div class="text-block">
+              <h4>Nature</h4>
+              <p>What a beautiful sunrise</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-section2">
+          <div class="container_vid">
+            <img
+              src="{% static '2.jpg' %}"
+              alt="Nature"
+              style="width:100%;"
+              data-fancybox
+              href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
+            />
+            <span class="glyphicon glyphicon-play-circle"></span>
+            <div class="text-block">
+              <h4>Nature</h4>
+              <p>What a beautiful sunrise</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-section2">
+          <div class="container_vid">
+            <img
+              src="{% static '3.jpg' %}"
+              alt="Nature"
+              style="width:100%;"
+              data-fancybox
+              href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
+            />
+            <span class="glyphicon glyphicon-play-circle"></span>
+            <div class="text-block">
+              <h4>Nature</h4>
+              <p>What a beautiful sunrise</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-section2">
+          <div class="container_vid">
+            <img
+              src="{% static '1.jpg' %}"
+              alt="Nature"
+              style="width:100%;"
+              data-fancybox
+              href="https://vimeo.com/307290359/5d1b43fc36"
+            />
+            <span class="glyphicon glyphicon-play-circle"></span>
+            <div class="text-block">
+              <h4>Nature</h4>
+              <p>What a beautiful sunrise</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="section3" class="container-fluid">
+      <h2 class="section-h">BEFORE + AFTER</h2>
+      <div style="margin-left: 12%;margin-top: 20px;">
+        <div class="slider-img">
+          <img
+            src="{% static '3.jpg' %}"
+            data-fancybox
+            data-src="{% static 'juxtapose.html' %}"
+            href="javascript:;"
+          />
+          <div class="juxtapose" id="2" style="display: none;">
+            <img src="{% static '1.jpg' %}" />
+            <img src="{% static '2.jpg' %}" />
+          </div>
+        </div>
+        <div class="juxtapose" id="2" style="margin: 10px;float: left;">
+          <img src="{% static '1.jpg' %}" />
+          <img src="{% static '2.jpg' %}" />
+        </div>
+        <div class="juxtapose" style="margin: 10px;float: left;">
+          <img src="{% static '1.jpg' %}" />
+          <img src="{% static '2.jpg' %}" />
+        </div>
+        <div class="juxtapose" style="margin: 10px;float: left;">
+          <img src="{% static '1.jpg' %}" />
+          <img src="{% static '2.jpg' %}" />
+        </div>
+        <div class="juxtapose" style="margin: 10px;float: left;">
+          <img src="{% static '1.jpg' %}" />
+          <img src="{% static '2.jpg' %}" />
+        </div>
+        <div class="juxtapose" style="margin: 10px;float: left;">
+          <img src="{% static '1.jpg' %}" />
+          <img src="{% static '2.jpg' %}" />
+        </div>
+        <div class="juxtapose" style="margin: 10px;float: left;">
+          <img src="{% static '1.jpg' %}" />
+          <img src="{% static '2.jpg' %}" />
+        </div>
+        <div class="juxtapose" style="margin: 10px;float: left;">
+          <img src="{% static '1.jpg' %}" />
+          <img src="{% static '2.jpg' %}" />
+        </div>
+        <div class="juxtapose" style="margin: 10px;float: left;">
+          <img src="{% static '1.jpg' %}" />
+          <img src="{% static '2.jpg' %}" />
+        </div>
+      </div>
+      <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
+      <link
+        rel="stylesheet"
+        href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css"
+      />
+    </div>
+    <div id="section4" class="container-fluid">
+      <h2 class="section-h">ABOUT ZERO</h2>
+      <div class="section4div">
+        <p class="section4p">
+          ZERO VFX lives at the intersection of creativity, technology and
+          culture.
+        </p>
+        <p class="section4p">
+          Our team consists of passionate and experienced artists supported by a
+          technologically sophisticated pipeline tasked to deliver complex
+          visual effects for feature film and commercial<br />projects. The idea
+          started in a basement in 2010 with one simple goal: promote top level
+          artistic innovation and out of the box thinking no matter the medium.
+        </p>
+        <p class="section4p">
+          Part of this drive led to ZERO's launch of the world’s first
+          completely cloud-based rendering solution, ZYNC, which was sold to
+          Google in 2014.
+        </p>
+        <p class="section4p">
+          At ZERO, we encourage a warm and creative atmosphere, organizing
+          family lunches, movie screenings, and a host of other activities that
+          keep people smiling and positive, again to the<br />benefit of our
+          employees and our work product.
+        </p>
+      </div>
+      <div style="margin-left: 10%">
+        <div class="sec4responsive">
+          <img src="{% static '19.jpg' %}" alt="Cinque Terre" />
+        </div>
+        <div class="sec4responsive">
+          <img src="{% static '20.jpg' %}" alt="Cinque Terre" />
+        </div>
+        <div class="sec4responsive">
+          <img src="{% static '21.jpg' %}" alt="Cinque Terre" />
+        </div>
+      </div>
+      </div>
+    </div>
+    <div id="section5" class="container-fluid">
+      <h2 class="section-h">CAREERS</h2>
+      <p class="section-p">
+        Try to scroll this section and look at the navigation bar while
+        scrolling! Try to scroll this section and look at the navigation bar
+        while scrolling!
+      </p>
+      <p>
+        Try to scroll this section and look at the navigation bar while
+        scrolling! Try to scroll this section and look at the navigation bar
+        while scrolling!
+      </p>
+    </div>
+    <div id="section6" class="container-fluid">
+      <h2 class="section-h">CONTACT</h2>
+      <p class="section-p">
+        Try to scroll this section and look at the navigation bar while
+        scrolling! Try to scroll this section and look at the navigation bar
+        while scrolling!
+      </p>
+      <p>
+        Try to scroll this section and look at the navigation bar while
+        scrolling! Try to scroll this section and look at the navigation bar
+        while scrolling!
+      </p>
+    </div>
 
-<div id="section1" class="container-fluid">
-  <h1>Section 1</h1>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-</div>
-<div id="section2" class="container-fluid">
-  <h1>Section 2</h1>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-</div>
-<div id="section3" class="container-fluid">
-  <h1>Section 3</h1>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-</div>
-<div id="section4" class="container-fluid">
-  <h1>Section 4 Submenu 1</h1>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-</div>
+    <script>
+      window.onscroll = function() {
+        myFunction();
+      };
 
-<script>
-window.onscroll = function() {myFunction()};
+      $(".data-fancybox").fancybox({
+        width: "30%",
+        height: "30%"
+      });
 
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
 
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-</script>
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+      $(".card-deck a").fancybox({
+        caption: function(instance, item) {
+          return $(this)
+            .parent()
+            .find(".card-text")
+            .html();
+        }
+      });
 
-</body>
+      $(".container_vid").hover(function() {
+        $(".glyphicon");
+      });
+
+      var x = "{% static '1.jpg' $}";
+      var y = "{% static '2.jpg' $}";
+
+      function openjux() {
+        $.fancybox.open({
+          src: "{% static 'juxtapose.html' %}",
+          type: "iframe",
+          opts: {
+            afterShow: function(instance, current) {
+              console.info("done!");
+            }
+          }
+        });
+      }
+
+      $(".fancybox").fancybox({
+        autoCenter: true,
+        maxWidth: 900,
+        maxHeight: 600,
+        fitToView: false,
+        width: "99%",
+        height: "95%",
+        afterClose: function() {
+          localStorage.setItem("JobstartscrollPosition", null);
+        },
+        beforeShow: function() {
+          $("body").css({ overflow: "hidden", "padding-right": "17px" });
+        },
+        afterClose: function() {
+          $("html, body").removeAttr("style");
+        }
+      });
+    </script>
+  </body>
 </html>
-
